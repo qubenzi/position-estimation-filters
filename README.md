@@ -15,7 +15,6 @@
 W projekcie realizowanym w ramach laboratorium robotów mobilnych celem jest implementacja filtrów cyfrowych do estymacji orientacji robota w przestrzeni na podstawie pomiarów z IMU ( _ang. Inertial Measurement Unit_). W ramach realizowanego zadania zostały zrealizowane:
 
 - filtr Kalmana,
-- rozszerzony filtr Klamana,
 - filtr komplementarny,
 - filtr Mahony&#39;ego.
 
@@ -29,7 +28,7 @@ Dostępne były pomiary pochodzące z przyspieszeniomierza oraz z żyroskopu, co
 . Aby uzyskać zmierzone za pomocą pierwszego z czujników kąty, wykorzystano poniższe zależności:
 
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;\Theta=arcsin(−\frac{a_x}{g})," title="\Large \theta=arcsin(−\frac{a_x}{g})," />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;\Theta=arcsin(−\frac{-a_x}{g})," title="\Large \theta=arcsin(−\frac{a_x}{g})," />
 
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;\Phi=atan2(a_y,a_z)" title="\Large \Phi=atan2(a_y,a_z)" />
 
