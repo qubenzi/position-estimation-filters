@@ -80,16 +80,24 @@ for i=1:length(acceltetta)
     P_phi   = (1 - K_phi   * H) * P_phi;
 end
 
+subplot(211)
 plot(T,est_tetta);
 hold on;
 plot(T,acceltetta);
 plot(T,gyrotetta);
 legend('po filtracji','akcelerometr','zyroskop');
+ylabel('kąt[rad]');
+xlabel('czas[s]');
+title('\theta')
+grid on
+axis([0 450 -2 1])
 
-
-figure;
+subplot(212)
 plot(T,est_phi)
 hold on
 plot(T,accelphi);
 plot(T,gyrophi);
 legend('po filtracji','akcelerometr','zyroskop');
+ylabel('kąt[rad]');
+xlabel('czas[s]');
+title('\phi');
