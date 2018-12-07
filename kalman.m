@@ -90,7 +90,6 @@ ylabel('kąt[rad]');
 xlabel('czas[s]');
 title('\theta')
 grid on
-axis([0 450 -2 1])
 
 subplot(212)
 plot(T,est_phi)
