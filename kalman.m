@@ -39,14 +39,14 @@ R_tetta = [var(acceltetta)^2 0; 0 var(gyrotetta)^2];
 R_phi   = [var(accelphi  )^2 0; 0 var(gyrophi  )^2];
 
 %%%%%%%% macierz kowariancji bledu estymacji
-P_tetta = 0;
-P_phi   = 0;
+P_tetta = 1;
+P_phi   = 1;
 
 % Macierz kolumnowa, ilosc elementow jest rowna ilosci czujnikow, z ktorych pobieramy dane
 H = [1; 1];
 
 for i=1:length(acceltetta)
-    %%%%%%%% predykcja -> obiekt siÍ nie porusza nowe polozenie = stare polozenie
+    %%%%%%%% predykcja -> obiekt siƒô nie porusza nowe polozenie = stare polozenie
     if i == 1
     else
         est_tetta(i) = est_tetta(i-1);
@@ -64,7 +64,7 @@ for i=1:length(acceltetta)
     S_phi   = H * P_phi   * H' + R_phi;
 
     %%%%%%%% Wzmocnienia K 
-    % obliczenie jaki wp≥yw na estymacje po≥oøenia ma wynik modelu i pomiary z czujnikow 
+    % obliczenie jaki wp≈Çyw na estymacje po≈Ço≈ºenia ma wynik modelu i pomiary z czujnikow 
 
     K_tetta = P_tetta * H' * (S_tetta)^(-1);
     K_phi   = P_phi   * H' * (S_phi  )^(-1);
