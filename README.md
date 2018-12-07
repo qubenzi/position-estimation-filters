@@ -77,7 +77,11 @@ t równym częstotliwości próbkowania. Po odpowiednich przekształceniach post
 gdzie α^k
  oznacza wartość kąta estymowanego k-tej próbki a αkAM i αkG to odpowiednio obliczone na podstawie wzorów z rozdziału 2 wartości kątów wynikające z pomiarów akcelerometrem i magnetometrem oraz z żyroskopu. Stała czasowa _T_ to wartość określająca jak szybko ustala się odpowiedź filtra. Zbyt mała wartość będzie skutkowała większym wpływem żyroskopu, za duża, pominięciem go.
 
-W związku z brakiem danych z magnetometru w podanym zestawie danych obliczone będą tylko wcześniej wymienione kąty. Wyniki powyższych rozważań zostały zaprezentowane w pliku _Complementary.m._ Zaimplementowany filtr zachowuje się zgodnie z oczekiwaniami.
+W związku z brakiem danych z magnetometru w podanym zestawie danych obliczone będą tylko wcześniej wymienione kąty. Wyniki powyższych rozważań zostały zaprezentowane w pliku _Complementary.m._ Zaimplementowany filtr zachowuje się zgodnie z oczekiwaniami:
+
+![Alt text](Pics/Complementary_all.bmp?raw=true )
+![Alt text](Pics/Complementary_theta_effect.bmp?raw=true )
+![Alt text](Pics/Complementary_theta_trasition.bmp?raw=true )
 
 ## 1. 5.Filtr Mahony&#39;ego
 
