@@ -14,9 +14,9 @@
 
 W projekcie realizowanym w ramach laboratorium robotów mobilnych celem jest implementacja filtrów cyfrowych do estymacji orientacji robota w przestrzeni na podstawie pomiarów z IMU ( _ang. Inertial Measurement Unit_). W ramach realizowanego zadania zostały zrealizowane:
 
-- filtr Kalmana,
-- filtr komplementarny,
-- filtr Mahony&#39;ego.
+- filtr Kalmana (Marlena Gruba i Robert Drozd),
+- filtr komplementarny (Piotr Kluczek),
+- filtr Mahony&#39;ego (Jakub Olesz).
 
 Skorzystano z pomiarów znajdujących się w repozytorium GitHub ([https://github.com/SMAC-Group/imudata](https://github.com/SMAC-Group/imudata)), z zasugerowanego przez prowadzącego zbioru danych pomiarowych z płytki NavChip.
 
@@ -48,7 +48,11 @@ Filtr Kalmana jest narzędziem pozwalającym na wykorzystanie sygnałów pomiaro
 - innowacja (różnica predykcji i sygnału pomiarowego),
 - aktualizacja (obliczenie wyjścia estymowanego na podstawie predykcji, innowacji oraz dobranych wzmocnień).
 
-Z wykorzystaniem pomiarów dokonana została implementacja filtracji Kalmana. Implementacji dokonano przy użyciu środowiska Matlab, wyniki znajdują się w pliku _kalman.m_.
+Z wykorzystaniem pomiarów dokonana została implementacja filtracji Kalmana. Implementacji dokonano przy użyciu środowiska Matlab, wyniki znajdują się w pliku _kalman.m_. Na poniższych wykresach przedstawiono wyniki filtracji. W czasie 0.3 s wyjście filtru ustaliło się. Szumy zakłóceniowe z akcelerometru oraz dryf żyroskopu zostały skutecznie odfiltrowane.
+
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/kalman1.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/kalman2.png" />
+
 
 ## 1. 4.Filtr komplementarny
 
