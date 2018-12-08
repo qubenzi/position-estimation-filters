@@ -17,7 +17,7 @@ g = 9.81; %m/s2
 quaternion = zeros(length(T), 4); %zdefiniowanie tablicy quaternionow do przechowywania orientacji obiektu
 q0 = [1 0 0 0];
 
-Kp = 2; %wspolczynniki oraz wektor calki dla regulatora PI 
+Kp = 1; %wspolczynniki oraz wektor calki dla regulatora PI 
 Ki = 1;
 integral=[0 0 0];
 

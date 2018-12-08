@@ -8,18 +8,18 @@ clear;
 
 
 filename = './navchip/navchip.csv'; %odczytanie danych
-samples = 6000; %ilosc probek do odczytania z pliku csv (caly plik ma ponad 200mb)
+samples = 250; %ilosc probek do odczytania z pliku csv (caly plik ma ponad 200mb)
 D_nav = csvread(filename, 1, 1, [1, 1, samples, 6]);
 dt = 0.004637307785202; %s
 T = 0:dt:dt*(samples-1);
 g = 9.81; %m/s2
-bias_correction = 1; %mozna ustawic 1, wtedy bedzie odjeta srednia uchybow na kazdej z osi zyroskopu
+bias_correction = 0; %mozna ustawic 1, wtedy bedzie odjeta srednia uchybow na kazdej z osi zyroskopu
 
 quaternion = zeros(length(T), 4); %zdefiniowanie tablicy quaternionow do przechowywania orientacji obiektu
 q0 = [0 0 1 0];
 
-Kp = 2; %wspolczynniki oraz wektor calki dla regulatora PI 
-Ki = 0;
+Kp = 10; %wspolczynniki oraz wektor calki dla regulatora PI 
+Ki = 4;
 integral=[0 0 0];
 
 Gyr  = D_nav(:, 1:3); %odczytanie danych z zyroskopu, format osi: xyz
