@@ -89,42 +89,51 @@ W związku z brakiem danych z magnetometru w podanym zestawie danych obliczone b
 
 ## 1. 5.Filtr Mahony&#39;ego
 
+<b>Działanie filtru</b>
+
 W celu ustalenia orientacji obiektu, filtr Mahony&#39;ego implementuje pewną postać sterownika PI. Najpierw porównuje się ostatnią estymację orientacji z orientacją wyznaczoną w danej chwili czasu jedynie na podstawie odczytów z akcelerometru. Wyznacza się błąd poprzez obliczenie iloczynu wektorowego dwóch wektorów wspomnianych wektorów. Jeżeli wektory się pokrywają to błąd wynosi zero. Jeżeli nie są zorientowane identycznie, otrzymuje się niezerowy błąd, który zostaje podany do sterownika PI. Współczynnikach Kp i Ki są podawane jednorazowo przed rozpoczęciem filtracji. Wyjście ze sterownika dodaje się do aktualnego odczytu z żyroskopu. Tak zmodyfikowany wektor prędkości kątowej ∆ω
  zostaje przemnożony przez
 ∆t
  i dodany do ostatniej estymacji orientacji. 
 
 <b>Omówienie wyników</b>
+
 W pliku mahony\_navchip.m znajduje się implementacja filtru zastosowana do danych pomiarowych uzyskanych przy pomocy płytki NavChip. Dostępne były pomiary pochodzące z akcelerometru oraz z żyroskopu, co pozwoliło na estymację kątów przechylenia (z ang. Roll) Φ
  oraz pochylenia (z. ang. Pitch)
 Θ
 . Bez danych z magnetometru, kąt Yaw nie może być wyznaczony bezwzględnie i dlatego na wykresie obserwuje stał pozorny ruch wokół tej osi związany z niezerowym dryfem żyroskopu wynikającym z szumu pomiarowego i stałego uchybu sensora (a ang, bias). 
 
-Poniższe dwa wykresy ilustrują działanie części całkującej filtru. Pierwszy z nich przedstawia działanie filtru dla kp=3 oraz ki=0. Wstępna korekcja średniego uchybu żyroskopu jest wyłączona. Wyjście filtru po pewnym czasie się stabilizuje, ale z niezerowym uchybem. 
+Poniższe wykresy ilustrują działanie części całkującej filtru. Pierwsze dwa z nich przedstawiają działanie filtru dla <i>kp</i>=3 oraz <i>ki</i>=0. Wstępna korekcja średniego uchybu żyroskopu jest wyłączona. Wyjście filtru po pewnym czasie się stabilizuje, ale z niezerowym uchybem. 
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_3_0_uchyb.png" />
-<i>Filtr Mahony&#39;ego - kp = 3, ki = 0</i>
+<i style="text-align:center">Filtr Mahony&#39;ego - kp = 3, ki = 0</i>
 
-Drugi wykres przedstawia działanie filtru dla kp=3 oraz ki=5. Wyjście filtru się stabilizuje, a element całkujący powoduje, że uchyb ustalony dąży do zera.
+Druga para wykresów przedstawia działanie filtru dla kp=3 oraz ki=5. Wyjście filtru się stabilizuje, a element całkujący powoduje, że uchyb ustalony dąży do zera.
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_3_5_korekcja_uchybu.png" />
-<i>Filtr Mahony&#39;ego - kp = 3, ki = 5</i>
+<i style="text-align:center">Filtr Mahony&#39;ego - kp = 3, ki = 5</i>
 
-Kolejne wykresy przedstawia działanie filtru dla ki=4 oraz kp wynoszącego kolejno: 10, 20 i 60 . Zastosowanie większego wzmocnienia powoduje, że filtr szybciej osiąga stan ustalony. Większe wzmocnienie oznacza również, że filtr będzie bardziej podatny na szum pomiarowy. Dla kp=60 wyjście filtru jest bardzo podobne do kątu obliczonego przy pomocy samego akcelerometru.
-<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_10_4.png" />
-<i>Filtr Mahony&#39;ego - kp = 10, ki = 4</i>
+Kolejne wykresy przedstawia działanie filtru dla <i>ki</i>=4 oraz <i>kp</i> wynoszącego kolejno: 10, 20 i 60. Zastosowanie większego wzmocnienia powoduje, że filtr szybciej osiąga stan ustalony. Większe wzmocnienie oznacza również, że filtr będzie bardziej podatny na szum pomiarowy. Dla kp=60 szum na wyjściu filtru jest bardzo podobny do szumu związanego z danymi akcelerometru.
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_10_4_1.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_10_4_2.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_10_4_3.png" />
+<i style="text-align:center">Filtr Mahony&#39;ego - kp = 10, ki = 4</i>
 
-<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_20_4.png" />
-<i>Filtr Mahony&#39;ego - kp = 20, ki = 4</i>
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_20_4_1.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_20_4_2.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_20_4_3.png" />
+<i style="text-align:center">Filtr Mahony&#39;ego - kp = 20, ki = 4</i>
 
-<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_60_4.png" />
-<i>Filtr Mahony&#39;ego - kp = 60, ki = 4</i>
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_60_4_1.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_60_4_2.png" />
+<img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_60_4_3.png" />
+<i style="text-align:center">Filtr Mahony&#39;ego - kp = 60, ki = 4</i>
 
 W pliku mahony\_2.m zastosowano filtr do danych z żyroskopu i akcelerometru udostępnionych przez Magwick&#39;a. W czasie odpowiadającym około 7000 próbek płytka IMU była przechylana od -90 do +90 stopni wokół każdej z osi. Dwa poniższe wykresy ilustrują dane z sensorów oraz działanie filtru dla kp = 1, ki = 1.
 
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony2_sensors.png" />
-<i>Obracanie IMU - dane z sensorów</i>
+<i style="text-align:center">Obracanie IMU - dane z sensorów</i>
 
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony2_filter.png" />
-<i>Obracanie IMU - filtr Mahony&#39;ego</i>
+<i style="text-align:center">Obracanie IMU - filtr Mahony&#39;ego</i>
 
 <b> instrukcja uruchamiania i edycji plików </b>
 M-pliki należy otwierać w środowisku obliczeniowym Matlab. Wymagane jest także rozpakowanie katalogu navchip.zip. W plikach mahony\_2 oraz mahony\_navchip N można zmienić ilość próbek które mają być poddane filtracji <i>(zmienna "samples")</i>, wartości współczynników filtru (zmienne "kp" oraz "ki"), a w pliku mahony\_navchip.m można dodatkowo ustawić flagę bias_correction (0 - korekcja wyłączona, 1 - korekcja włączona). Włączenie tej opcji usuwa przed zastosowaniem filtracji skłądową stałą żyroskopu. Dla każdej z osi jest obliczana średnia arytmetyczna wszystkich próbek, a następnie odejmowana od zarejestrowanych danych.
