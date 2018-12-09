@@ -84,9 +84,15 @@ gdzie α^k
 
 W związku z brakiem danych z magnetometru w podanym zestawie danych obliczone będą tylko wcześniej wymienione kąty. Wyniki powyższych rozważań zostały zaprezentowane w pliku _Complementary.m._ Zaimplementowany filtr zachowuje się zgodnie z oczekiwaniami:
 
+Dla T = [0.01 0.01] :
 ![Alt text](Pics/Complementary_all.bmp?raw=true )
 ![Alt text](Pics/Complementary_theta_effect.bmp?raw=true )
 ![Alt text](Pics/Complementary_theta_trasition.bmp?raw=true )
+
+Jak widać procesy przejściowe są bardzo krótkie i wartość początkowa filtru jest dość bliska wartości pochodzących z akcelerometru. Poniżej przedstawiono wynik dla T = [0.1 0.1] :
+
+![Alt text](Pics/Complementary_theta_effect2.bmp?raw=true )
+![Alt text](Pics/Complementary_theta_trasition2.bmp?raw=true )
 
 ## 1. 5.Filtr Mahony&#39;ego
 
