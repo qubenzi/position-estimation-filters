@@ -50,9 +50,10 @@ Filtr Kalmana jest narzędziem pozwalającym na wykorzystanie sygnałów pomiaro
 
 Z wykorzystaniem pomiarów dokonana została implementacja filtracji Kalmana. Implementacji dokonano przy użyciu środowiska Matlab, wyniki znajdują się w pliku _kalman.m_. Na poniższych wykresach przedstawiono wyniki filtracji. W czasie 0.3 s wyjście filtru ustaliło się. Szumy zakłóceniowe z akcelerometru oraz dryf żyroskopu zostały skutecznie odfiltrowane.
 
+Kąty przechylenia oraz pochylenia uzyskane za pomocą akceleromteru, żyroskopu oraz po filtracji filtrem Kalmana:
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/kalman1.png" />
+Początkowe 0,6 s pracy algorytmu:
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/kalman2.png" />
-
 
 ## 1. 4.Filtr komplementarny
 
