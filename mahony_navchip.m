@@ -18,7 +18,7 @@ bias_correction = 0; %mozna ustawic 1, wtedy bedzie odjeta srednia uchybow na ka
 quaternion = zeros(length(T), 4); %zdefiniowanie tablicy quaternionow do przechowywania orientacji obiektu
 q0 = [0 0 1 0];
 
-Kp = 10; %wspolczynniki oraz wektor calki dla regulatora PI 
+Kp = 60; %wspolczynniki oraz wektor calki dla regulatora PI 
 Ki = 4;
 integral=[0 0 0];
 
@@ -114,13 +114,15 @@ grid on;
 end
  
  %wyswietlanei wynikow
- figure('Name', 'Katy');
+ figure()
  axis(1) = subplot(3,1,1);
  hold on;
  plot(T, rad2deg(pitchAcc));
  plot(T,euler(:, 1));
  legend('\phi (akcelerometr)', '\phi (filtracja)');
  title('Kat \phi');
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  grid on;
  hold off;
  
@@ -131,6 +133,8 @@ end
  grid on;
  legend('\theta (akcelerometr)', '\theta (filtracja)');
  title('Kat \theta');
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  hold off;
  
  axis(3) = subplot(3, 1, 3);
@@ -139,6 +143,7 @@ end
  grid on;
  legend('\psi (filtracja)');
  title('Kat \psi');
-  
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  grid on;
  hold off

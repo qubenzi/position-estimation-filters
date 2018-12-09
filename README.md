@@ -134,7 +134,7 @@ Kolejne wykresy przedstawia działanie filtru dla <i>ki</i>=4 oraz <i>kp</i> wyn
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony_bias_off_60_4_3.png" />
 <p align="center"><i>Filtr Mahony&#39;ego - kp = 60, ki = 4</i></p>
 
-W pliku mahony\_2.m zastosowano filtr do danych z żyroskopu i akcelerometru udostępnionych przez Magwick&#39;a. W czasie odpowiadającym około 7000 próbek płytka IMU była przechylana od -90 do +90 stopni wokół każdej z osi. Dwa poniższe wykresy ilustrują dane z sensorów oraz działanie filtru dla kp = 1, ki = 1.
+Dodatkowo w pliku mahony\_2.m zastosowano filtr do danych z żyroskopu i akcelerometru udostępnionych przez Magwick&#39;a. W czasie odpowiadającym około 7000 próbek płytka IMU była przechylana od -90 do +90 stopni wokół każdej z osi. Dwa poniższe wykresy ilustrują dane z sensorów oraz działanie filtru dla kp = 1, ki = 1.
 
 <img src="https://raw.githubusercontent.com/legwan/position-estimation-filters/master/Pics/mahony2_sensors.png" />
 <p align="center"><i>Obracanie IMU - dane z sensorów</i></p>

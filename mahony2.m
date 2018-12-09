@@ -54,6 +54,7 @@ hold off;
 linkaxes(axis, 'x'); 
 grid on;
 
+
 for i=1:length(T)
       %filtr mahony'ego
       if(i==1)
@@ -106,6 +107,8 @@ for i=1:length(T)
  plot(T,euler(:, 1));
  legend('\phi (akcelerometr)', '\phi (filtracja)');
  title('Kat \phi');
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  grid on;
  hold off;
  
@@ -116,6 +119,8 @@ for i=1:length(T)
  grid on;
  legend('\theta (akcelerometr)', '\theta (filtracja)');
  title('Kat \theta');
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  hold off;
  
  axis(3) = subplot(3, 1, 3);
@@ -124,5 +129,6 @@ for i=1:length(T)
  grid on;
  legend('\psi (filtracja)');
  title('Kat \psi');
-  
+ xlabel('czas (s)');
+ ylabel('k¹t (\circ)');
  grid on;
