@@ -1,11 +1,7 @@
 % Aby ponownie przeliczyć macierze kątów wg. akcelerometru i żyroskopu
-% należy usunąć macierz M
+% należy usunąć macierz DATA bądź Accelerometr
 % Aby ponownie przeliczyć macierz kątów po filtracji należy usunąć macierz
 % fi
-% uwaga: z powodu braku magnetometru nie jest możliwym ustalenie kąta
-% obrotu względem osi pionowej(z), ponieważ nie wiadomo gdzie się znajduje
-% północ. Dlatego w celu pokazania działania filtru dla tej osi
-% potraktowaną ją jak oś x.
 % zmienna ver służy do przełączania źródła danych (1 dla Magwicka, 0 dla
 % Navchip)
 clear all % zakomentuj jeśli nie chcesz przeładowania danych
